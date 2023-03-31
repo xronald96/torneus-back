@@ -40,7 +40,8 @@
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "webpack": "^5.77.0"
   },
   "devDependencies": {
     "@golevelup/ts-jest": "^0.3.5",
