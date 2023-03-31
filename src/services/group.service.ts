@@ -92,54 +92,54 @@ const resutlTable = (data: Array<Result>) => {
 const resultMatch = (
   match: Match,
   team: string,
-): { points: string; gf: string; ge: string } => {
-  if (match.state === 'CREATED') return { points: '0', gf: '0', ge: '0' };
+): { points: number; gf: number; ge: number } => {
+  if (match.state === 'CREATED') return { points: 0, gf: 0, ge: 0 };
   if (
     match.teams[0].name === team &&
-    match.teams[0].points > match.teams[1].points
+    Number(match.teams[0].points) > Number(match.teams[1].points)
   )
     return {
-      points: '3',
-      gf: match.teams[0].points,
-      ge: match.teams[1].points,
+      points: 3,
+      gf: Number(match.teams[0].points),
+      ge: Number(match.teams[1].points),
     };
   else if (
     match.teams[1].name === team &&
-    match.teams[1].points > match.teams[0].points
+    Number(match.teams[1].points) > Number(match.teams[0].points)
   )
     return {
-      points: '3',
-      gf: match.teams[1].points,
-      ge: match.teams[0].points,
+      points: 3,
+      gf: Number(match.teams[1].points),
+      ge: Number(match.teams[0].points),
     };
   else if (
     (match.teams[1].name === team || match.teams[0].name === team) &&
-    match.teams[1].points === match.teams[0].points
+    Number(match.teams[1].points) === Number(match.teams[0].points)
   )
     return {
-      points: '1',
-      gf: match.teams[0].points,
-      ge: match.teams[1].points,
+      points: 1,
+      gf: Number(match.teams[0].points),
+      ge: Number(match.teams[1].points),
     };
   else if (
     match.teams[0].name === team &&
-    match.teams[0].points < match.teams[1].points
+    Number(match.teams[0].points) < Number(match.teams[1].points)
   )
     return {
-      points: '0',
-      gf: match.teams[0].points,
-      ge: match.teams[1].points,
+      points: 0,
+      gf: Number(match.teams[0].points),
+      ge: Number(match.teams[1].points),
     };
   else if (
     match.teams[1].name === team &&
-    match.teams[1].points < match.teams[0].points
+    Number(match.teams[1].points) < Number(match.teams[0].points)
   )
     return {
-      points: '0',
-      gf: match.teams[1].points,
-      ge: match.teams[0].points,
+      points: 0,
+      gf: Number(match.teams[1].points),
+      ge: Number(match.teams[0].points),
     };
-  else return { points: '0', gf: '0', ge: '0' };
+  else return { points: 0, gf: 0, ge: 0 };
 };
 
 type Result = {
