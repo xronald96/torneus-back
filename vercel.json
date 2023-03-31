@@ -1,13 +1,16 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "src/main.ts",
-      "use": "@vervel/node"
+      "use": "@vercel/node"
     }
   ],
-  "routes": {
-    "src": "/(*)",
-    "dest": "src/main.ts",
-    "methods": ["POST"]
-  }
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/main.ts",
+      "methods": ["POST"]
+    }
+  ]
 }
