@@ -17,8 +17,6 @@ import { UserModule } from './modules/user.module';
       useClass: ValidationPipe,
     },
   ],
-  //Ro_nald123456
-  //mongodb+srv://DevRonald:<password>@enjoymadrid.rlmhn.mongodb.net/?retryWrites=true&w=majority
   imports: [
     MongooseModule.forRoot(
       'mongodb+srv://DevRonald:Ro_nald123456@enjoymadrid.rlmhn.mongodb.net/Torneus?retryWrites=true&w=majority',
