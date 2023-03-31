@@ -1,8 +1,10 @@
 {
-  "builds": {
-    "src": "src/main.ts",
-    "use": "@vervel/node"
-  },
+  "builds": [
+    {
+      "src": "src/main.ts",
+      "use": "@vervel/node"
+    }
+  ],
   "routes": {
     "src": "/(*)",
     "dest": "src/main.ts",
