@@ -93,6 +93,7 @@ const resultMatch = (
   match: Match,
   team: string,
 ): { points: string; gf: string; ge: string } => {
+  if (match.state === 'CREATED') return { points: '0', gf: '0', ge: '0' };
   if (
     match.teams[0].name === team &&
     match.teams[0].points > match.teams[1].points
