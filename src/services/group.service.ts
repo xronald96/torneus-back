@@ -83,7 +83,9 @@ const resutlTable = (data: Array<Result>) => {
     });
     return {
       ...item,
-      resultGroup: resultByTeam,
+      resultGroup: resultByTeam.sort((a, b) => {
+        return a.points - b.points || a.gd - b.gd;
+      }),
     };
   });
   return resultPerGroup;
